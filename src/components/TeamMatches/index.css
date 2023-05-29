@@ -1,0 +1,62 @@
+/* Write your CSS here */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.render_team_match_details {
+  width: 90%;
+  margin-top: 40px;
+  max-width: 500px;
+}
+.team_match_container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.match_container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  width: 100%;
+}
+.RCB {
+  background: linear-gradient(to top, #1e293b, #a4261d);
+}
+
+.KKR {
+  background: linear-gradient(to top, #1e293b, #5755a7);
+}
+
+.KXP {
+  background: linear-gradient(to top, #1e293b, #d91c1f);
+}
+
+.CSK {
+  background: linear-gradient(to top, #1e293b, #f7db00);
+}
+
+.RR {
+  background: linear-gradient(to top, #1e293b, #da237b);
+}
+
+.MI {
+  background: linear-gradient(to top, #1e293b, #13418b);
+}
+
+.SRH {
+  background: linear-gradient(to top, #1e293b, #f26d22);
+}
+
+.DC {
+  background: linear-gradient(to top, #1e293b, #4f5db0);
+}
+
+@media screen and (min-width: 768px) {
+  .render_team_match_details {
+    margin-top: 60px;
+    max-width: 1110px;
+  }
+}
