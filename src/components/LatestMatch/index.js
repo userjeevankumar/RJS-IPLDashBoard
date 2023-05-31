@@ -21,7 +21,7 @@ class LatestMatch extends Component {
       <div>
         <h1>Latest Match</h1>
         <div className="latest_match">
-          <div>
+          <div className="left_details">
             <p>{competingTeam}</p>
             <p>{date}</p>
             <p>{venue}</p>
@@ -32,7 +32,7 @@ class LatestMatch extends Component {
             alt={`Latest match ${competingTeam}`}
             className="img-team-logo"
           />
-          <div>
+          <div className="right_details">
             <div>
               <p>First Innings</p>
               <p>{firstInning}</p>

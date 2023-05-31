@@ -22,25 +22,23 @@ class TeamMatches extends Component {
     const {id} = params
     const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const fetchData = await response.json()
-    const updatedTeamsData = fetchData.teams.map(eachTeam => ({
-      teamBannerUrl: eachTeam.team_banner_url,
-      latestMatchDetails: eachTeam.latest_match_details.map(
-        latestMatchDetails => ({
-          umpires: latestMatchDetails.umpires,
-          result: latestMatchDetails.result,
-          manOfTheMatch: latestMatchDetails.man_of_the_match,
-          id: latestMatchDetails.id,
-          date: latestMatchDetails.date,
-          venue: latestMatchDetails.venue,
-          competingTeam: latestMatchDetails.competing_team,
-          competingTeamLogo: latestMatchDetails.competing_team_logo,
-          // use value of the key 'competing_team' for alt as `latest match ${competing_team}`
-          firstInning: latestMatchDetails.first_inning,
-          secondInnings: latestMatchDetails.second_innings,
-          matchStatus: latestMatchDetails.match_status,
-        }),
-      ),
-      recentMatches: eachTeam.recent_matches.map(recentMatches => ({
+    const updatedTeamsData = {
+      teamBannerUrl: fetchData.team_banner_url,
+      latestMatchDetails: {
+        umpires: fetchData.latest_match_details.umpires,
+        result: fetchData.latest_match_details.result,
+        manOfTheMatch: fetchData.latest_match_details.man_of_the_match,
+        id: fetchData.latest_match_details.id,
+        date: fetchData.latest_match_details.date,
+        venue: fetchData.latest_match_details.venue,
+        competingTeam: fetchData.latest_match_details.competing_team,
+        competingTeamLogo: fetchData.latest_match_details.competing_team_logo,
+        // use value of the key 'competing_team' for alt as `latest match ${competing_team}`
+        firstInning: fetchData.latest_match_details.first_inning,
+        secondInnings: fetchData.latest_match_details.second_innings,
+        matchStatus: fetchData.latest_match_details.match_status,
+      },
+      recentMatches: fetchData.recent_matches.map(recentMatches => ({
         umpires: recentMatches.umpires,
         result: recentMatches.result,
         manOfTheMatch: recentMatches.man_of_the_match,
@@ -54,12 +52,12 @@ class TeamMatches extends Component {
         secondInnings: recentMatches.second_innings,
         matchStatus: recentMatches.match_status,
       })),
-    }))
+    }
     this.setState({teamMatchesData: updatedTeamsData, isLoading: false})
   }
 
   renderLoader = () => (
-    <div className="loader">
+    <div testid="loader" className="loader">
       <Loader type="Oval" color="#00BFFF" height={50} width={50} />
     </div>
   )

@@ -7,9 +7,18 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  color: #ffffff;
 }
 
 .img-team-logo {
   height: 200px;
   width: 200px;
+}
+
+.right_details {
+  text-align: right;
+}
+
+.left_details {
+  text-align: left;
 }

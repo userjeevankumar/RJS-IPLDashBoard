@@ -1,1 +1,22 @@
 /* Write your CSS here */
+.match-card-logo {
+  height: 150px;
+  max-width: 150px;
+}
+
+.match-card {
+  background-color: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.Lost {
+  color: #e31a1a;
+}
+
+.Won {
+  color: #18ed66;
+}
