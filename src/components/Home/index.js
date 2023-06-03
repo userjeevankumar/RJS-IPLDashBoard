@@ -27,7 +27,7 @@ class Home extends Component {
   }
 
   renderLoader = () => (
-    <div testid="loader">
+    <div data-testid="loader">
       <Loader type="Rings" color="#00BFFF" height={100} width={100} />
     </div>
   )

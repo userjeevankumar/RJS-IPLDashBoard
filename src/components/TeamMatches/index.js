@@ -57,7 +57,7 @@ class TeamMatches extends Component {
   }
 
   renderLoader = () => (
-    <div testid="loader" className="loader">
+    <div data-testid="loader" className="loader">
       <Loader type="Oval" color="#00BFFF" height={50} width={50} />
     </div>
   )
@@ -67,7 +67,7 @@ class TeamMatches extends Component {
     const {teamBannerUrl, latestMatchDetails} = teamMatchesData
     return (
       <div className="render_team_match_details">
-        <img src={teamBannerUrl} alt="team-banner" className="img-log" />
+        <img src={teamBannerUrl} alt="team banner" className="img-log" />
         <LatestMatch latestMatchDetails={latestMatchDetails} />
         {this.renderRecentMatchDetails()}
       </div>
@@ -81,7 +81,7 @@ class TeamMatches extends Component {
       <div>
         <ul className="match_container">
           {recentMatches.map(eachMatch => (
-            <MatchCard key={eachMatch.key} MatchData={eachMatch} />
+            <MatchCard MatchData={eachMatch} key={eachMatch.key} />
           ))}
         </ul>
       </div>

@@ -8,7 +8,7 @@ class TeamCard extends Component {
     const {iplTeamsData} = this.props
     const {name, id, teamImageUrl} = iplTeamsData
     return (
-      <Link to={`team-matches/${id}`}>
+      <Link to={`/team-matches/${id}`}>
         <li className="logo-name-container">
           <img src={teamImageUrl} alt={name} className="ipl-img-logo" />
           <p>{name}</p>
